@@ -1,0 +1,36 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            background-color: #f0f2f5;
+        }
+
+        header, nav, section, aside, footer {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            gap: 10px; 
+            height: 400px; 
+        }
+
+        .sidebar {
+            flex: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main {
+            flex: 3; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            margin-top: 10px;
+        }
