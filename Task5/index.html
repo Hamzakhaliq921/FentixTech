@@ -3,249 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram • Hamza Kahliq</title>
+    <title>Instagram Mockup - Hamza Kahliq</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Instagram+Sans:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
         
         body {
-            font-family: 'Instagram Sans', system-ui, sans-serif;
-            background: linear-gradient(135deg, #1e2937 0%, #334155 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow-x: auto;
-            padding: 2rem 1rem;
+            font-family: 'Inter', system-ui, sans-serif;
         }
         
-        .phone-frame {
-            width: 380px;
-            height: 720px;
+        .phone {
+            width: 340px;
+            height: 680px;
             background: #111;
-            border-radius: 52px;
+            border-radius: 48px;
             padding: 12px;
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
-            border: 8px solid #111;
         }
         
-        .phone-frame::before {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 140px;
-            height: 28px;
-            background: #111;
-            border-radius: 20px;
-            z-index: 10;
-        }
-        
-        .screen {
+        .phone-inner {
             width: 100%;
             height: 100%;
             background: white;
-            border-radius: 40px;
+            border-radius: 38px;
             overflow: hidden;
             position: relative;
         }
         
-        .header {
-            height: 60px;
+        .status-bar {
+            height: 28px;
             background: white;
-            border-bottom: 1px solid #dbdbdb;
             display: flex;
             align-items: center;
-            padding: 0 16px;
             justify-content: space-between;
-            font-weight: 600;
-            font-size: 18px;
+            padding: 0 20px;
+            font-size: 11px;
+            font-weight: 500;
         }
         
-        .stories {
+        .instagram-header {
+            height: 44px;
             display: flex;
-            gap: 12px;
-            padding: 12px 16px;
-            overflow-x: auto;
-            background: white;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
             border-bottom: 1px solid #dbdbdb;
         }
         
-        .story-circle img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            border: 3px solid #0ea5e9;
-            object-fit: cover;
+        .story-circle {
+            width: 68px;
+            height: 68px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #f56040, #c13584, #405de6);
+            padding: 3px;
+        }
+        
+        .grid-post {
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
         }
     </style>
 </head>
-<body>
-    <div class="flex gap-8 items-start">
-
+<body class="bg-gradient-to-br from-purple-100 to-pink-100 min-h-screen py-12 flex items-center justify-center">
+    <div class="flex gap-8 px-6">
+        
         <!-- Screen 1: Profile -->
-        <div class="phone-frame">
-            <div class="screen bg-white flex flex-col">
-                <!-- Top Bar -->
-                <div class="header">
-                    <span class="text-2xl font-bold">hamzakahliq</span>
-                    <div class="flex items-center gap-4">
-                        <i class="fa-solid fa-plus text-2xl"></i>
-                        <i class="fa-solid fa-bars text-2xl"></i>
+        <div class="phone">
+            <div class="phone-inner flex flex-col">
+                <div class="status-bar">
+                    <div>9:41</div>
+                    <div class="flex items-center gap-1">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
                     </div>
                 </div>
-
-                <!-- Profile Header -->
-                <div class="p-4 flex items-center gap-4 border-b">
-                    <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center p-1">
-                        <img src="https://picsum.photos/id/64/300/300" alt="Hamza Kahliq" class="w-full h-full rounded-full object-cover border-4 border-white">
+                
+                <div class="instagram-header">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl font-semibold">hamzakahliq</span>
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
                     </div>
-                    <div class="flex-1">
-                        <div class="font-semibold text-2xl">Hamza Kahliq</div>
-                        <div class="text-gray-500">@hamzakahliq • 20</div>
-                        <div class="flex gap-6 mt-4 text-sm">
-                            <div><span class="font-semibold">142</span><span class="text-gray-500"> posts</span></div>
-                            <div><span class="font-semibold">8.4K</span><span class="text-gray-500"> followers</span></div>
-                            <div><span class="font-semibold">421</span><span class="text-gray-500"> following</span></div>
+                    <div class="flex items-center gap-6 text-xl">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-regular fa-bell"></i>
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                
+                <div class="px-4 pt-4 flex gap-6">
+                    <div class="w-24 h-24 rounded-2xl overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                        <img src="https://picsum.photos/id/883/200/200" alt="Hamza Kahliq" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="flex-1 flex justify-around pt-3">
+                        <div class="text-center">
+                            <div class="font-semibold text-lg">248</div>
+                            <div class="text-xs text-gray-500 tracking-widest">POSTS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold text-lg">12.4K</div>
+                            <div class="text-xs text-gray-500 tracking-widest">FOLLOWERS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold text-lg">892</div>
+                            <div class="text-xs text-gray-500 tracking-widest">FOLLOWING</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Bio -->
-                <div class="px-4 py-3 text-sm border-b">
-                    20 | Fitness • Photography • Travel<br>
-                    Chasing goals &amp; good lighting 💪📸<br>
-                    🇵🇰 | Based in Karachi
+                
+                <div class="px-4 py-3">
+                    <div class="font-semibold">Hamza Kahliq</div>
+                    <div class="text-sm text-gray-600">Photographer & Visual Creator 📸</div>
+                    <div class="text-sm text-gray-600">Capturing moments | Travel | Lifestyle</div>
+                    <a href="#" class="text-blue-500 text-sm">linktr.ee/hamzakahliq</a>
                 </div>
-
-                <!-- Highlights -->
-                <div class="px-4 py-3 flex gap-4 overflow-x-auto">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto text-3xl">🏋️</div>
-                        <div class="text-xs mt-1">Gym</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto text-3xl">📸</div>
-                        <div class="text-xs mt-1">Shots</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mx-auto text-3xl">✈️</div>
-                        <div class="text-xs mt-1">Travel</div>
-                    </div>
+                
+                <div class="px-4">
+                    <button onclick="alert('Edit Profile clicked!')" 
+                            class="w-full bg-gray-100 hover:bg-gray-200 transition py-2 rounded-xl text-sm font-semibold">
+                        Edit Profile
+                    </button>
                 </div>
-
-                <div class="flex-1 flex items-end">
-                    <div class="w-full h-14 bg-white border-t flex items-center justify-around text-3xl text-gray-700">
-                        <i class="fa-solid fa-house"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-square-plus text-4xl -mt-1"></i>
-                        <i class="fa-solid fa-heart"></i>
-                        <i class="fa-solid fa-circle-user text-blue-500"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Screen 2: Feed -->
-        <div class="phone-frame">
-            <div class="screen bg-white flex flex-col">
-                <div class="header">
-                    <span class="text-2xl font-bold text-black">Instagram</span>
-                    <div class="flex gap-4">
-                        <i class="fa-solid fa-heart text-2xl"></i>
-                        <i class="fa-solid fa-paper-plane text-2xl"></i>
-                    </div>
-                </div>
-
-                <!-- Stories -->
-                <div class="stories">
-                    <div class="story-circle">
-                        <img src="https://picsum.photos/id/64/200/200" alt="">
-                        <div class="text-xs mt-1 font-medium">Your story</div>
-                    </div>
-                    <div class="story-circle">
-                        <img src="https://picsum.photos/id/201/200/200" alt="">
-                        <div class="text-xs mt-1 font-medium">Ali</div>
-                    </div>
-                    <div class="story-circle">
-                        <img src="https://picsum.photos/id/237/200/200" alt="">
-                        <div class="text-xs mt-1 font-medium">Zain</div>
-                    </div>
-                    <div class="story-circle">
-                        <img src="https://picsum.photos/id/180/200/200" alt="">
-                        <div class="text-xs mt-1 font-medium">Omar</div>
-                    </div>
-                </div>
-
-                <!-- Post -->
-                <div class="flex-1 flex flex-col overflow-hidden">
-                    <div class="post-header flex items-center gap-3 p-4 border-b">
-                        <img src="https://picsum.photos/id/64/200/200" class="w-9 h-9 rounded-full" alt="">
-                        <div class="font-semibold">hamzakahliq</div>
-                        <div class="ml-auto text-gray-400 text-sm">2h</div>
-                    </div>
-
-                    <div class="h-96 bg-gradient-to-br from-slate-800 to-zinc-900 flex items-center justify-center relative">
-                        <div class="text-white text-center">
-                            <div class="text-7xl mb-3">🏋️‍♂️</div>
-                            <div class="text-2xl font-bold">Leg Day Grind</div>
-                            <div class="text-sm opacity-75 mt-1">No excuses • Age 20</div>
+                
+                <div class="px-4 py-6 border-b">
+                    <div class="flex gap-5 overflow-x-auto pb-2">
+                        <div class="flex flex-col items-center">
+                            <div class="story-circle">
+                                <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                                    <img src="https://picsum.photos/id/1005/200/200" alt="" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <span class="text-xs mt-1">Travel</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="story-circle">
+                                <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                                    <img src="https://picsum.photos/id/669/200/200" alt="" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <span class="text-xs mt-1">Street</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="story-circle">
+                                <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                                    <img src="https://picsum.photos/id/201/200/200" alt="" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <span class="text-xs mt-1">Portrait</span>
                         </div>
                     </div>
-
-                    <div class="p-4 flex gap-5 text-3xl">
-                        <i class="fa-solid fa-heart text-red-500"></i>
-                        <i class="fa-regular fa-comment"></i>
-                        <i class="fa-regular fa-paper-plane"></i>
-                        <i class="fa-regular fa-bookmark ml-auto"></i>
-                    </div>
-
-                    <div class="px-4 -mt-1">
-                        <div class="font-semibold">hamzakahliq</div>
-                        <div class="text-sm">Pushing limits at 20 🔥<br>#Fitness #GymLife # Karachi</div>
-                    </div>
                 </div>
-
-                <div class="h-14 bg-white border-t flex items-center justify-around text-3xl text-gray-700">
+                
+                <div class="flex-1 grid grid-cols-3 gap-px bg-gray-200 overflow-hidden">
+                    <div class="grid-post flex items-center justify-center bg-gradient-to-br from-blue-400 to-indigo-500"></div>
+                    <div class="grid-post flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500"></div>
+                    <div class="grid-post flex items-center justify-center"></div>
+                    <div class="grid-post flex items-center justify-center bg-gradient-to-br from-indigo-400 to-blue-500"></div>
+                    <div class="grid-post flex items-center justify-center"></div>
+                    <div class="grid-post flex items-center justify-center"></div>
+                </div>
+                
+                <div class="h-14 bg-white border-t flex items-center justify-around text-2xl">
                     <i class="fa-solid fa-house text-black"></i>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-solid fa-square-plus text-4xl -mt-1"></i>
-                    <i class="fa-solid fa-compass"></i>
-                    <i class="fa-solid fa-circle-user"></i>
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    <i class="fa-solid fa-square-plus text-gray-400"></i>
+                    <i class="fa-regular fa-heart text-gray-400"></i>
+                    <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-black">
+                        <img src="https://picsum.photos/id/883/200/200" alt="" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Screen 3: Explore / Grid -->
-        <div class="phone-frame">
-            <div class="screen bg-white flex flex-col">
-                <div class="header">
-                    <span class="font-semibold text-lg">Explore</span>
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        
+        <!-- Screen 2: Home Feed -->
+        <div class="phone">
+            <div class="phone-inner flex flex-col">
+                <div class="status-bar">
+                    <div>9:41</div>
+                    <div class="flex items-center gap-1">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
                 </div>
-
-                <div class="flex-1 p-2 grid grid-cols-3 gap-2 overflow-auto bg-gray-50">
-                    <div class="aspect-square bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-red-500 to-rose-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-slate-700 to-zinc-800 rounded-xl flex items-center justify-center text-white text-4xl">🏋️</div>
-                    <div class="aspect-square bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-lime-500 to-green-600 rounded-xl"></div>
-                    <div class="aspect-square bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl"></div>
+                
+                <div class="instagram-header">
+                    <span class="text-3xl font-black tracking-tighter">Instagram</span>
+                    <div class="flex items-center gap-5 text-2xl">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
                 </div>
-
-                <div class="h-14 bg-white border-t flex items-center justify-around text-3xl text-gray-700">
-                    <i class="fa-solid fa-house"></i>
-                    <i class="fa-solid fa-magnifying-glass text-black"></i>
-                    <i class="fa-solid fa-square-plus text-4xl -mt-1"></i>
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-circle-user"></i>
+                
+                <div class="px-4 py-3 border-b flex gap-4 overflow-x-auto">
+                    <div class="flex flex-col items-center flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full border-2 border-pink-500 p-0.5">
+                            <img src="https://picsum.photos/id/883/200/200" alt="" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="text-xs mt-1">You</span>
+                    </div>
+                    <div class="flex flex-col items-center flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full border-2 border-pink-500 p-0.5">
+                            <img src="https://picsum.photos/id/1005/200/200" alt="" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="text-xs mt-1">ali</span>
+                    </div>
+                    <div class="flex flex-col items-center flex-shrink-0">
+                        <div class="w-16 h-16 rounded-full border-2 border-pink-500 p-0.5">
+                            <img src="https://picsum.photos/id/669/200/200" alt="" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="text-xs mt-1">zain</span>
+                    </div>
+                </div>
+                
+                <div class="flex-1 overflow-auto">
+                    <div class="flex items-center justify-between px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+                                <img src="https://picsum.photos/id/883/200/200" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-semibold text-sm">hamzakahliq</span>
+                        </div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    
+                    <div class="h-96 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center relative">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-2">📸</div>
+                            <div class="text-xl font-light tracking-widest">MOMENT CAPTURED</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between px-4 py-3 text-3xl">
+                        <div class="flex gap-6">
+                            <i class="fa-solid fa-heart text-red-500"></i>
+                            <i class="fa-regular fa-comment"></i>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    
+                    <div class="px-4 text-sm">
+                        <span class="font-semibold">Liked by zainahmed and 3,241 others</span>
+                    </div>
+                    
+                    <div class="px-4 text-sm mt-1">
+                        <span class="font-semibold">hamzakahliq</span> Golden hour hits different ✨
+                    </div>
+                    
+                    <div class="px-4 text-xs text-gray-500 mt-2">View all 89 comments</div>
+                    
+                    <div class="absolute bottom-0 left-0 right-0 h-14 bg-white border-t flex items-center justify-around text-3xl">
+                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                        <i class="fa-solid fa-square-plus text-gray-400"></i>
+                        <i class="fa-regular fa-heart text-gray-400"></i>
+                        <div class="w-7 h-7 rounded-full overflow-hidden border border-black">
+                            <img src="https://picsum.photos/id/883/200/200" alt="" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 3: Profile Grid -->
+        <div class="phone">
+            <div class="phone-inner flex flex-col">
+                <div class="status-bar">
+                    <div>9:41</div>
+                    <div class="flex items-center gap-1">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-header">
+                    <div></div>
+                    <div class="font-semibold">hamzakahliq</div>
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                
+                <div class="flex px-6 py-5 gap-6">
+                    <div class="w-20 h-20 rounded-3xl overflow-hidden shadow">
+                        <img src="https://picsum.photos/id/883/200/200" alt="Hamza Kahliq" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 pt-2">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="font-bold">248</div>
+                                <div class="text-xs text-gray-500">posts</div>
+                            </div>
+                            <div>
+                                <div class="font-bold">12.4K</div>
+                                <div class="text-xs text-gray-500">followers</div>
+                            </div>
+                            <div>
+                                <div class="font-bold">892</div>
+                                <div class="text-xs text-gray-500">following</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="px-6 text-sm -mt-2">
+                    Hamza Kahliq • Photographer & Storyteller
+                </div>
+                
+                <div class="flex border-b mt-6">
+                    <div class="flex-1 text-center py-3 border-b-2 border-black">
+                        <i class="fa-solid fa-grip"></i>
+                    </div>
+                    <div class="flex-1 text-center py-3 text-gray-400">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="flex-1 text-center py-3 text-gray-400">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+                </div>
+                
+                <div class="flex-1 grid grid-cols-3 gap-px bg-gray-200 p-px overflow-hidden">
+                    <div class="grid-post bg-gradient-to-br from-blue-400 to-indigo-500"></div>
+                    <div class="grid-post bg-gradient-to-br from-purple-500 to-pink-500"></div>
+                    <div class="grid-post bg-gradient-to-br from-indigo-400 to-blue-500"></div>
+                    <div class="grid-post bg-gradient-to-br from-purple-400 to-indigo-500"></div>
+                    <div class="grid-post bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
+                        <span class="text-white text-xs font-medium">NEW</span>
+                    </div>
+                    <div class="grid-post bg-gradient-to-br from-indigo-500 to-blue-400"></div>
+                </div>
+                
+                <div class="h-14 bg-white border-t flex items-center justify-around text-2xl">
+                    <i class="fa-solid fa-house text-gray-400"></i>
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    <i class="fa-solid fa-square-plus text-gray-400"></i>
+                    <i class="fa-regular fa-heart text-gray-400"></i>
+                    <div class="w-8 h-8 rounded-full overflow-hidden ring-2 ring-black">
+                        <img src="https://picsum.photos/id/883/200/200" alt="" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
