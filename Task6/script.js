@@ -68,21 +68,6 @@ document.getElementById('close-lightbox').addEventListener('click', () => {
     document.getElementById('lightbox').style.display = 'none';
 });
 
-// Snowflakes
-function createSnowflake() {
-    const container = document.getElementById('snow-container');
-    const snow = document.createElement('div');
-    snow.style.position = 'absolute';
-    snow.style.color = 'white';
-    snow.style.fontSize = Math.random() * 25 + 15 + 'px';
-    snow.style.left = Math.random() * 100 + 'vw';
-    snow.style.opacity = Math.random() * 0.7 + 0.4;
-    snow.style.animation = `snowfall ${Math.random() * 8 + 8}s linear forwards`;
-    snow.textContent = ['❄️', '❅', '❆'][Math.floor(Math.random() * 3)];
-    container.appendChild(snow);
-
-    setTimeout(() => snow.remove(), 20000);
-}
 
 // Mobile Menu
 const mobileBtn = document.getElementById('mobile-menu-btn');
