@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINTER | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #f8f1eb;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #f8f1eb 0%, #e0f0f5 100%);
+        }
+
+        .gallery-img {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4b6a5e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .snowflake {
+            position: absolute;
+            color: #fff;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f1eb] text-gray-800 overflow-x-hidden">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#4b6a5e] rounded-full flex items-center justify-center text-white text-xl">❄️</div>
+                <span class="heading-font text-2xl tracking-tight font-semibold">WINTER</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" onclick="navigateTo('home')" class="nav-link text-gray-700 hover:text-[#4b6a5e]">HOME</a>
+                <a href="#" onclick="navigateTo('gallery')" class="nav-link text-gray-700 hover:text-[#4b6a5e]">GALLERY</a>
+                <a href="#" onclick="navigateTo('about')" class="nav-link text-gray-700 hover:text-[#4b6a5e]">ABOUT</a>
+                <a href="#" onclick="navigateTo('contact')" class="nav-link text-gray-700 hover:text-[#4b6a5e]">CONTACT</a>
+            </nav>
+
+            <button onclick="toggleMobileMenu()" 
+                    class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="flex flex-col px-6 py-6 gap-4 text-lg">
+                <a href="#" onclick="navigateTo('home');toggleMobileMenu()" class="py-2">Home</a>
+                <a href="#" onclick="navigateTo('gallery');toggleMobileMenu()" class="py-2">Gallery</a>
+                <a href="#" onclick="navigateTo('about');toggleMobileMenu()" class="py-2">About</a>
+                <a href="#" onclick="navigateTo('contact');toggleMobileMenu()" class="py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <!-- Snowflakes -->
+        <div id="snow-container"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center relative z-10">
+            <div class="max-w-2xl mx-auto">
+                <span class="inline-flex items-center gap-2 text-[#4b6a5e] text-sm tracking-[3px] font-medium mb-6">
+                    <span class="block w-8 h-px bg-[#4b6a5e]"></span>
+                    A COLLECTION OF FROZEN BEAUTY
+                    <span class="block w-8 h-px bg-[#4b6a5e]"></span>
+                </span>
+                
+                <h1 class="heading-font text-7xl md:text-8xl leading-none font-medium tracking-tighter text-[#2c3e35]">
+                    Winter<br>Moments
+                </h1>
+                
+                <p class="mt-8 text-xl text-gray-600 max-w-md mx-auto">
+                    Capturing the serene beauty of winter landscapes and intimate family moments
+                </p>
+                
+                <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="navigateTo('gallery')" 
+                            class="px-8 py-4 bg-[#2c3e35] text-white rounded-full text-lg font-medium hover:bg-[#1f2a24]">
+                        Explore Gallery
+                    </button>
+                    <button onclick="navigateTo('contact')" 
+                            class="px-8 py-4 border-2 border-[#2c3e35] text-[#2c3e35] rounded-full text-lg font-medium hover:bg-[#2c3e35] hover:text-white">
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-gray-400 to-transparent"></div>
+            SCROLL
+        </div>
+    </section>
+
+    <!-- FILTER NAV -->
+    <section id="gallery" class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-wrap gap-3 justify-center mb-12" id="category-filters">
+            <button onclick="filterCategory('all')" 
+                    class="filter-btn bg-[#2c3e35] text-white px-6 active">ALL</button>
+            <button onclick="filterCategory('landscape')" 
+                    class="filter-btn bg-white border border-gray-200 hover:border-gray-400">LANDSCAPES</button>
+            <button onclick="filterCategory('decoration')" 
+                    class="filter-btn bg-white border border-gray-200 hover:border-gray-400">DECORATIONS</button>
+            <button onclick="filterCategory('food')" 
+                    class="filter-btn bg-white border border-gray-200 hover:border-gray-400">FOOD</button>
+            <button onclick="filterCategory('family')" 
+                    class="filter-btn bg-white border border-gray-200 hover:border-gray-400">FAMILY</button>
+        </div>
+
+        <!-- GALLERY GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <!-- Left Text -->
+                <div class="md:col-span-7">
+                    <h2 class="heading-font text-5xl font-medium mb-8">About</h2>
+                    <div class="prose text-gray-600 max-w-none leading-relaxed">
+                        <p class="text-lg">
+                            Capturing the serene beauty of winter landscapes has been my passion for over a decade. 
+                            Each photograph tells a story of frozen moments, quiet snowfalls, and the peaceful stillness 
+                            that blankets the world during the coldest months.
+                        </p>
+                        <p class="mt-6">
+                            From the majestic mountain peaks covered in pristine snow to intimate family moments 
+                            wrapped in winter warmth, my work celebrates the unique beauty that this season brings.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-12">
+                        <div>
+                            <div class="text-4xl font-semibold text-[#2c3e35]">10+</div>
+                            <div class="text-sm text-gray-500 mt-1">YEARS EXPERIENCE</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-[#2c3e35]">500+</div>
+                            <div class="text-sm text-gray-500 mt-1">PHOTOS CAPTURED</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="md:col-span-5">
+                    <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://picsum.photos/id/1015/800/800" 
+                             alt="Artist Palette" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="heading-font text-5xl font-medium text-center mb-3">Get in Touch</h2>
+            <p class="text-center text-gray-600 mb-12">Let's work together to capture your winter moments</p>
+            
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <input type="text" id="name" 
+                           class="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-[#4b6a5e]"
+                           placeholder="Your Name" required>
+                </div>
+                <div>
+                    <input type="email" id="email" 
+                           class="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-[#4b6a5e]"
+                           placeholder="Email Address" required>
+                </div>
+                <div>
+                    <textarea id="message" rows="6"
+                              class="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-[#4b6a5e]"
+                              placeholder="Your Message"></textarea>
+                </div>
+                
+                <button type="submit"
+                        class="w-full py-6 bg-[#2c3e35] text-white text-lg font-medium rounded-2xl hover:bg-[#1f2a24]">
+                    SEND MESSAGE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2c3e35] text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 text-white mb-6">
+                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-2xl">❄️</div>
+                        <span class="heading-font text-3xl font-medium">WINTER</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Colorado, USA<br>
+                        Preserving the magic of winter through photography
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-6 text-lg">Quick Links</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div onclick="navigateTo('gallery')" class="cursor-pointer hover:text-white">Gallery</div>
+                        <div onclick="navigateTo('about')" class="cursor-pointer hover:text-white">About Me</div>
+                        <div onclick="navigateTo('contact')" class="cursor-pointer hover:text-white">Contact</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-6 text-lg">Contact</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div>hello@winterportfolio.com</div>
+                        <div>+1 (555) 123-4567</div>
+                        <div>Colorado, USA</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-16 pt-8 text-center text-xs text-gray-500">
+                © 2026 Winter Portfolio • Designed with ❤️
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center">
+        <div class="relative max-w-4xl w-full mx-4">
+            <button onclick="closeLightbox()" 
+                    class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300">
+                ×
+            </button>
+            <img id="lightbox-image" src="" class="w-full rounded-3xl shadow-2xl" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script already included via CDN
+        
+        // Sample gallery data
+        const galleryItems = [
+            {
+                id: 1,
+                category: "landscape",
+                img: "https://picsum.photos/id/1016/800/1000",
+                title: "Mountain Peak"
+            },
+            {
+                id: 2,
+                category: "decoration",
+                img: "https://picsum.photos/id/201/800/1000",
+                title: "Winter Greenery"
+            },
+            {
+                id: 3,
+                category: "food",
+                img: "https://picsum.photos/id/292/800/1000",
+                title: "Hot Chocolate"
+            },
+            {
+                id: 4,
+                category: "landscape",
+                img: "https://picsum.photos/id/1018/800/1000",
+                title: "Foggy Forest"
+            },
+            {
+                id: 5,
+                category: "family",
+                img: "https://picsum.photos/id/64/800/1000",
+                title: "Friends by Fire"
+            },
+            {
+                id: 6,
+                category: "decoration",
+                img: "https://picsum.photos/id/133/800/1000",
+                title: "Christmas Tree"
+            },
+            {
+                id: 7,
+                category: "food",
+                img: "https://picsum.photos/id/312/800/1000",
+                title: "Donuts"
+            },
+            {
+                id: 8,
+                category: "family",
+                img: "https://picsum.photos/id/1005/800/1000",
+                title: "Reading Together"
+            },
+            {
+                id: 9,
+                category: "landscape",
+                img: "https://picsum.photos/id/1015/800/1000",
+                title: "Autumn Road"
+            },
+            {
+                id: 10,
+                category: "food",
+                img: "https://picsum.photos/id/431/800/1000",
+                title: "Sweet Treats"
+            }
+        ];
+        
+        // Render gallery
+        function renderGallery(filteredItems) {
+            const container = document.getElementById('gallery-grid');
+            container.innerHTML = '';
+            
+            filteredItems.forEach(item => {
+                const div = document.createElement('div');
+                div.className = `group relative overflow-hidden rounded-3xl cursor-pointer`;
+                div.innerHTML = `
+                    <img src="${item.img}" 
+                         class="gallery-img w-full h-full object-cover aspect-[4/4.5]"
+                         alt="${item.title}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 flex items-end p-6">
+                        <div class="text-white">
+                            <div class="text-sm uppercase tracking-widest">${item.category}</div>
+                            <div class="text-xl font-medium">${item.title}</div>
+                        </div>
+                    </div>
+                `;
+                div.onclick = () => showLightbox(item.img);
+                container.appendChild(div);
+            });
+        }
+        
+        // Filter gallery
+        function filterCategory(category) {
+            // Update active button
+            document.querySelectorAll('#category-filters button').forEach(btn => {
+                if (category === 'all' && btn.textContent === 'ALL') {
+                    btn.classList.add('bg-[#2c3e35]', 'text-white');
+                    btn.classList.remove('bg-white', 'border');
+                } else if (btn.textContent.toLowerCase() === category) {
+                    btn.classList.add('bg-[#2c3e35]', 'text-white');
+                    btn.classList.remove('bg-white', 'border');
+                } else {
+                    btn.classList.remove('bg-[#2c3e35]', 'text-white');
+                    btn.classList.add('bg-white', 'border', 'border-gray-200');
+                }
+            });
+            
+            if (category === 'all') {
+                renderGallery(galleryItems);
+            } else {
+                const filtered = galleryItems.filter(item => item.category === category);
+                renderGallery(filtered);
+            }
+        }
+        
+        // Lightbox
+        function showLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-image');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'visible';
+        }
+        
+        // Snowflakes
+        function createSnowflake() {
+            const snowContainer = document.getElementById('snow-container');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake text-2xl';
+            snowflake.textContent = ['❄', '❅', '❆'][Math.floor(Math.random() * 3)];
+            
+            const leftPos = Math.random() * 100;
+            snowflake.style.left = `${leftPos}vw`;
+            snowflake.style.fontSize = `${Math.random() * 20 + 15}px`;
+            snowflake.style.animationDuration = `${Math.random() * 8 + 8}s`;
+            snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            snowContainer.appendChild(snowflake);
+            
+            // Remove after animation
+            setTimeout(() => {
+                snowflake.remove();
+            }, 20000);
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        }
+        
+        // Navigation
+        function navigateTo(section) {
+            document.getElementById(section).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        }
+        
+        // Form handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            if (name) {
+                alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon. ❄️`);
+                e.target.reset();
+            }
+        }
+        
+        // Keyboard support for lightbox
+        function handleKeyPress(e) {
+            if (e.key === "Escape") {
+                const lightbox = document.getElementById('lightbox');
+                if (!lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            }
+        }
+        
+        // Initialize everything
+        function initialize() {
+            // Render full gallery
+            renderGallery(galleryItems);
+            
+            // Snow effect
+            setInterval(createSnowflake, 180);
+            
+            // Form listener
+            document.getElementById('contact-form').addEventListener('submit', handleFormSubmit);
+            
+            // Keyboard listener
+            document.addEventListener('keydown', handleKeyPress);
+            
+            // Click outside lightbox to close
+            const lightbox = document.getElementById('lightbox');
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Make all images lazy load where possible
+            console.log('%cWinter Portfolio loaded successfully ❄️', 'color: #4b6a5e; font-family: monospace');
+        }
+        
+        // Run initialization
+        window.onload = initialize;
+    </script>
+</body>
+</html>
