@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WINTER | Portfolio</title>
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
@@ -17,11 +13,10 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <span class="snow-icon">❄️</span>
                 <span class="brand">WINTER</span>
             </div>
             
-            <nav class="nav">
+            <nav class="nav" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#gallery" class="nav-link">Gallery</a>
                 <a href="#about" class="nav-link">About</a>
@@ -34,12 +29,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero" style="background-image: url('https://picsum.photos/id/1015/1920/1080')">
+    <!-- HERO -->
+    <section id="home" class="hero">
         <div class="hero-overlay">
             <div class="hero-content">
                 <span class="subtitle">A COLLECTION OF FROZEN BEAUTY</span>
-                <h1 class="main-heading">Winter<br>Moments</h1>
+                <h1 class="main-heading">Winter Moments</h1>
                 <p class="hero-desc">Capturing the serene beauty of winter through every frame</p>
                 
                 <div class="hero-buttons">
@@ -51,7 +46,7 @@
         <div id="snow-container"></div>
     </section>
 
-    <!-- GALLERY SECTION -->
+    <!-- GALLERY -->
     <section id="gallery" class="section">
         <div class="container">
             <h2 class="section-title">Gallery</h2>
@@ -68,28 +63,34 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about" class="section bg-white">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
                     <h2 class="section-title">About</h2>
-                    <p>Capturing the serene beauty of winter landscapes has been my passion for over a decade...</p>
-                    <p>From majestic mountain peaks to intimate family moments, I celebrate the magic of winter.</p>
+                    <p>Capturing the serene beauty of winter landscapes has been my passion for over a decade. Each photograph tells a story of frozen moments and peaceful stillness.</p>
+                    <p>From majestic mountains to cozy family moments, I celebrate the unique magic of winter.</p>
                     
                     <div class="stats">
-                        <div><strong>10+</strong><span>Years Experience</span></div>
-                        <div><strong>500+</strong><span>Photos Captured</span></div>
+                        <div class="stat-item">
+                            <strong>10+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>500+</strong>
+                            <span>Photos Captured</span>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://picsum.photos/id/1015/800/800" alt="About">
+                    <img src="https://picsum.photos/id/1015/800/800" alt="Winter Photography">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title text-center">Get in Touch</h2>
@@ -97,8 +98,8 @@
             
             <form id="contact-form" class="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
-                <textarea id="message" placeholder="Your Message" rows="6"></textarea>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Write your message here..." rows="6" required></textarea>
                 <button type="submit" class="btn btn-primary w-full">SEND MESSAGE</button>
             </form>
         </div>
@@ -107,7 +108,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Winter Portfolio. All Rights Reserved.</p>
+            <p>&copy; 2026 Winter Portfolio • Designed with ❤️</p>
         </div>
     </footer>
 
@@ -117,7 +118,6 @@
         <img id="lightbox-image" src="" alt="">
     </div>
 
-    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
